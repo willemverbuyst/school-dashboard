@@ -1,1 +1,1 @@
-export * from './useGetSchools'
+export * from "./useGetSchools";

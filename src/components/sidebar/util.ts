@@ -1,13 +1,13 @@
-import { MenuProps } from 'antd'
+import { MenuProps } from "antd";
 
-type MenuItem = Required<MenuProps>['items'][number]
+type MenuItem = Required<MenuProps>["items"][number];
 
 export function getItem(
   label: React.ReactNode,
   key: React.Key,
   icon?: React.ReactNode,
   children?: MenuItem[],
-  type?: 'group'
+  type?: "group"
 ): MenuItem {
   return {
     key,
@@ -15,5 +15,5 @@ export function getItem(
     children,
     label,
     type,
-  } as MenuItem
+  } as MenuItem;
 }

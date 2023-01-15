@@ -1,1 +1,1 @@
-export * from './useSubjectForStudent'
+export * from "./useSubjectForStudent";

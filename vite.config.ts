@@ -1,7 +1,7 @@
-import { esbuildCommonjs } from '@originjs/vite-plugin-commonjs';
-import react from '@vitejs/plugin-react';
-import vitePluginImp from 'vite-plugin-imp';
-import { defineConfig } from 'vite';
+import { esbuildCommonjs } from "@originjs/vite-plugin-commonjs";
+import react from "@vitejs/plugin-react";
+import vitePluginImp from "vite-plugin-imp";
+import { defineConfig } from "vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -10,7 +10,7 @@ export default defineConfig({
     vitePluginImp({
       libList: [
         {
-          libName: 'antd',
+          libName: "antd",
           style: (name) => `antd/es/${name}/style`,
         },
       ],
@@ -24,11 +24,11 @@ export default defineConfig({
     },
   },
   resolve: {
-    alias: [{ find: /^~/, replacement: '' }],
+    alias: [{ find: /^~/, replacement: "" }],
   },
   optimizeDeps: {
     esbuildOptions: {
-      plugins: [esbuildCommonjs(['react-moment'])],
+      plugins: [esbuildCommonjs(["react-moment"])],
     },
   },
 });

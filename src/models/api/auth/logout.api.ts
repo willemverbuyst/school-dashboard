@@ -1,3 +1,3 @@
 export interface ApiLogout {
-  message: string
+  message: string;
 }

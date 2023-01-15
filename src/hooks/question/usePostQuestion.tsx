@@ -1,42 +1,42 @@
-import axios, { AxiosError, AxiosResponse } from 'axios'
-import { useMutation, useQueryClient } from 'react-query'
-import { axiosInstance, getJWTHeader } from '../../axiosInstance'
-import { Toast } from '../../components/toast'
-import { SERVER_ERROR } from '../../constants/constants'
-import { ApiNewQuestion, NewQuestion, QuestionInput } from '../../models'
-import { ApiError } from '../../models/api/error.api'
-import { ApiUser } from '../../models/api/user.api'
-import { queryKeys } from '../../react-query/constants'
-import { useUser } from '../auth/useUser'
+import axios, { AxiosError, AxiosResponse } from "axios";
+import { useMutation, useQueryClient } from "react-query";
+import { axiosInstance, getJWTHeader } from "../../axiosInstance";
+import { Toast } from "../../components/toast";
+import { SERVER_ERROR } from "../../constants/constants";
+import { ApiNewQuestion, NewQuestion, QuestionInput } from "../../models";
+import { ApiError } from "../../models/api/error.api";
+import { ApiUser } from "../../models/api/user.api";
+import { queryKeys } from "../../react-query/constants";
+import { useUser } from "../auth/useUser";
 
 const postQuestion = async (
   newQuestion: NewQuestion,
   user: ApiUser | null
 ): Promise<ApiNewQuestion | null | void> => {
   try {
-    if (!user) return null
-    const { id } = newQuestion
+    if (!user) return null;
+    const { id } = newQuestion;
     const { data }: AxiosResponse<ApiNewQuestion | ApiError> =
       await axiosInstance.post(`/questions/subjects/${id}`, newQuestion, {
         headers: getJWTHeader(user),
-      })
+      });
 
-    if ('data' in data) return data
+    if ("data" in data) return data;
 
-    const text = data.message
-    Toast({ text, status: 'error' })
-    return null
+    const text = data.message;
+    Toast({ text, status: "error" });
+    return null;
   } catch (errorResponse) {
-    let errorMessage = SERVER_ERROR
+    let errorMessage = SERVER_ERROR;
     if (axios.isAxiosError(errorResponse)) {
       if (errorResponse.response && errorResponse.response.data) {
-        const { message } = errorResponse.response.data as AxiosError
-        if (message) errorMessage = message
+        const { message } = errorResponse.response.data as AxiosError;
+        if (message) errorMessage = message;
       }
     }
-    Toast({ text: errorMessage, status: 'error' })
+    Toast({ text: errorMessage, status: "error" });
   }
-}
+};
 
 const buildQuestionObject = ({
   subject,
@@ -56,21 +56,21 @@ const buildQuestionObject = ({
   answer2bool: false,
   answer3bool: false,
   answer4bool: false,
-})
+});
 
 export const usePostQuestion = () => {
-  const { user } = useUser()
-  const queryClient = useQueryClient()
+  const { user } = useUser();
+  const queryClient = useQueryClient();
   const { mutate } = useMutation(
     (newQuestion: any) => postQuestion(buildQuestionObject(newQuestion), user),
     {
       onSuccess: () => {
-        queryClient.invalidateQueries([queryKeys.QUESTIONS])
-        const text = 'You have added a question'
-        Toast({ text, status: 'success' })
+        queryClient.invalidateQueries([queryKeys.QUESTIONS]);
+        const text = "You have added a question";
+        Toast({ text, status: "success" });
       },
     }
-  )
+  );
 
-  return mutate
-}
+  return mutate;
+};

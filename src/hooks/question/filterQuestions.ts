@@ -1,7 +1,7 @@
-import { Question } from '../../models'
+import { Question } from "../../models";
 
 export const filterBySubject = (
   questions: Array<Question>,
   subjectId: string
 ): Question[] =>
-  [...questions].filter(question => question.subjectId === subjectId)
+  [...questions].filter((question) => question.subjectId === subjectId);
