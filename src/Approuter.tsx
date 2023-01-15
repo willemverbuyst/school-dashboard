@@ -1,4 +1,5 @@
 import { Route, Switch } from "react-router-dom";
+
 import * as ROUTES from "./constants/routes";
 import { Login } from "./pages/auth/login";
 import { Signup } from "./pages/auth/signup";

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
+
 import { axiosInstance, getJWTHeader } from "../../axiosInstance";
 import { ApiUser } from "../../models/api/user.api";
 import { queryKeys } from "../../react-query/constants";
@@ -25,6 +26,7 @@ const getTestResultForSubject = async (
 
     return data.data;
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.log(error);
     return null;
   }

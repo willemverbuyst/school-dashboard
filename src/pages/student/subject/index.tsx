@@ -1,6 +1,7 @@
 import { Layout } from "antd";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+
 import { useStudentGuard, useSubjectForStudent, useUser } from "../../../hooks";
 import { BarChartDetails } from "./BarChartDetails";
 import { DoughnutChartDetails } from "./DoughnutChartDetails";

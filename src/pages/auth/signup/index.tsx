@@ -1,5 +1,6 @@
 import { Button, Col, Form, Input, Layout, Radio, Row, Select } from "antd";
 import { useEffect, useState } from "react";
+
 import {
   SignupInput,
   useGetSchools,
@@ -76,7 +77,7 @@ export function Signup(): JSX.Element {
               rules={[{ required: true, message: "Please select a school!" }]}
             >
               <Select placeholder="Select a school" style={{ width: 350 }}>
-                {schools.map(({ name, id }, i) => (
+                {schools.map(({ name, id }) => (
                   <Option key={id} value={id}>
                     {name}
                   </Option>

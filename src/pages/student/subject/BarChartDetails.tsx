@@ -1,6 +1,7 @@
 import { Col, Radio, Row, Space } from "antd";
 import moment from "moment";
 import { useState } from "react";
+
 import { BarChart } from "../../../components/charts";
 
 interface Result {
@@ -20,11 +21,7 @@ interface Props {
   subjectId: string;
 }
 
-export function BarChartDetails({
-  results,
-  subjects,
-  subjectId,
-}: Props): JSX.Element {
+export function BarChartDetails({ results }: Props): JSX.Element {
   const [radio, setRadio] = useState("date");
 
   const sortedData =

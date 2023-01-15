@@ -25,7 +25,7 @@ export function PolarChartMain({
   const labels = subjects.map((subject) => subject.name);
   // https://stackoverflow.com/questions/1152024/best-way-to-generate-a-random-color-in-javascript/1152508
   const color: string[] = [];
-  subjectSorted.forEach((subject) =>
+  subjectSorted.forEach(() =>
     color.push(
       "#" + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6)
     )

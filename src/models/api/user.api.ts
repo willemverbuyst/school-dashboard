@@ -53,11 +53,6 @@ export interface User {
   teacher?: Teacher;
 }
 
-export interface Subject {
-  id: string;
-  name: string;
-}
-
 export interface TestWithScores {
   id: string;
   createdAt: Date;

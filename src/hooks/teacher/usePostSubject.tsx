@@ -1,9 +1,10 @@
 import { useMutation, useQueryClient } from "react-query";
-import { useUser } from "../auth/useUser";
+
 import { axiosInstance, getJWTHeader } from "../../axiosInstance";
+import { Toast } from "../../components/toast";
 import { ApiUser } from "../../models/api/user.api";
 import { queryKeys } from "../../react-query/constants";
-import { Toast } from "../../components/toast";
+import { useUser } from "../auth/useUser";
 
 export interface SubjectInput {
   subjectName: string;
@@ -21,6 +22,7 @@ const postSubject = async (subjectName: string, user: ApiUser | null) => {
     );
     return data;
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.log(error);
   }
 };

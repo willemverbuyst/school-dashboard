@@ -1,5 +1,6 @@
 import { Col, Layout, Row } from "antd";
 import { useEffect } from "react";
+
 import { useLoggedInGuard } from "../../hooks";
 import { BarChartHome } from "./BarChartHome";
 import { LineChartHome } from "./LineChartHome";

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
+
 import { axiosInstance, getJWTHeader } from "../../axiosInstance";
-import { ApiUser } from "../../models/api/user.api";
+import { ApiUser, Data } from "../../models/api/user.api";
 import { queryKeys } from "../../react-query/constants";
 import { useUser } from "../auth/useUser";
 
@@ -14,6 +15,7 @@ const getTest = async (subjectId: string, user: ApiUser | null) => {
 
     return data.data;
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.log(error);
   }
 };
@@ -21,7 +23,7 @@ const getTest = async (subjectId: string, user: ApiUser | null) => {
 export const useGetTest = () => {
   const { user } = useUser();
   const [subjectId, setSubjectId] = useState("");
-  const fallback = [];
+  const fallback: Data[] = [];
   const { data: mcQuestions = fallback } = useQuery(
     [queryKeys.STUDENT_TEST, subjectId],
     () => getTest(subjectId, user)

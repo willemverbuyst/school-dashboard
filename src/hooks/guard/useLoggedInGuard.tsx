@@ -1,4 +1,5 @@
 import { useHistory } from "react-router-dom";
+
 import { useUser } from "../auth";
 
 export const useLoggedInGuard = (): { loggedInGuard: () => void } => {

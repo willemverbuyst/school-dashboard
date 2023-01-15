@@ -15,6 +15,6 @@ export function DoughnutChartMain({ averages }: Props): JSX.Element {
       title={`YOUR HAVE A GENERAL SCORE OF ${generalScore}%`}
     />
   ) : (
-    <p>YOU DON'T HAVE ENOUGH DATA YET TO DISPLAY AVERAGE</p>
+    <p>YOU DON&apos;T HAVE ENOUGH DATA YET TO DISPLAY AVERAGE</p>
   );
 }

@@ -1,4 +1,5 @@
 import { Col } from "antd";
+
 import { BarChart } from "../../../components/charts";
 
 interface Test {

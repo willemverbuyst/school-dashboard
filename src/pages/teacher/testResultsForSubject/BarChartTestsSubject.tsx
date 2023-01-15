@@ -1,4 +1,5 @@
 import { Col, Row } from "antd";
+
 import { BarChartTest } from "../../../components/charts";
 
 export interface TestResult {

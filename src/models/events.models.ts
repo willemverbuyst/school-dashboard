@@ -1,3 +1,5 @@
+import React from "react";
+
 export type RadioEvent = (
   event: React.ChangeEvent<HTMLInputElement>,
   questionNumber: number,

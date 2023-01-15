@@ -1,5 +1,6 @@
 import { Button } from "antd";
 import { useHistory } from "react-router-dom";
+
 import { useLogout } from "../../hooks/";
 
 export function LogoutButton(): JSX.Element {

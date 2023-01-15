@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useQuery } from "react-query";
+
 import { axiosInstance, getJWTHeader } from "../../axiosInstance";
 import { ApiUser } from "../../models/api/user.api";
 import { TestResult } from "../../pages/teacher/testResultsForSubject/BarChartTestsSubject";
@@ -26,6 +27,7 @@ const getTestResultForStudent = async (
 
     return data.data;
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.log(error);
     return null;
   }

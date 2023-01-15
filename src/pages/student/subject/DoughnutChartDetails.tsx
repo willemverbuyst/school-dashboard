@@ -1,4 +1,5 @@
 import { Col, Row } from "antd";
+
 import { DoughnutChart } from "../../../components/charts";
 
 interface Result {

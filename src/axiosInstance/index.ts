@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
+
 import { apiUrl } from "../constants/constants";
 import { ApiUser } from "../models/api/user.api";
 

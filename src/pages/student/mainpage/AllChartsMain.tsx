@@ -1,4 +1,5 @@
 import { Col, Row } from "antd";
+
 import { TestWithScores } from "../../../models/api/user.api";
 import { BarChartMain } from "./BarChartMain";
 import { DoughnutChartMain } from "./DoughnutChartMain";

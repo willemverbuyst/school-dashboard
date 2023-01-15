@@ -2,6 +2,7 @@ import { Button, Form, Layout, Modal, Radio, Row } from "antd";
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import NavigationPrompt from "react-router-navigation-prompt";
+
 import {
   useGetTest,
   usePostTest,
@@ -71,7 +72,7 @@ export function StudentTest(): JSX.Element {
               rules={[{ required: true, message: "Please select an answer!" }]}
             >
               <Radio.Group>
-                {answers.map(({ text, id }, i) => (
+                {answers.map(({ text, id }) => (
                   <Radio
                     key={id}
                     style={{
