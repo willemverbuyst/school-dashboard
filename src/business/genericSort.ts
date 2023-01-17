@@ -1,4 +1,4 @@
-interface SortData<T> {
+export interface SortData<T> {
   key: keyof T;
   isDescending?: boolean;
 }

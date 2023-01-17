@@ -50,7 +50,10 @@
     "format": "prettier . --write",
     "format:check": "prettier . --check",
     "lint": "eslint ./src --ext .jsx,.js,.ts,.tsx",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
   },
   "browserslist": {
     "production": [
